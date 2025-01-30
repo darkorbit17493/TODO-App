@@ -2,12 +2,14 @@ package com.example.todoapp;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,16 +21,20 @@ import java.util.Calendar;
 
 public class AddTodoActivity extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
+    private TimePickerDialog timePickerDialog;
     private EditText nameEditText, descriptionEditText;
     private Button dateButton;
+    private Button timeButton;
 
     private int selectedDay = -1, selectedMonth = -1, selectedYear = -1;
+    private int selectedHour = -1, selectedMinute = -1;
 
     private void UISetup() {
         nameEditText = findViewById(R.id.AddTODONameEditText);
         descriptionEditText = findViewById(R.id.AddTODODescriptionEditText);
 
         dateButton = findViewById(R.id.AddTODODateButton);
+        timeButton = findViewById(R.id.AddTODOTimeButton);
     }
 
     private void setDate(int day, int month, int year) {
@@ -45,6 +51,18 @@ public class AddTodoActivity extends AppCompatActivity {
         }
     }
 
+    private void setTime(int hour, int minute) {
+        if(isValidTime(hour, minute)) {
+            timeButton.setText(getFormatedTime(hour, minute));
+            selectedHour = hour;
+            selectedMinute = minute;
+        } else {
+            timeButton.setText("Untimed");
+            selectedHour = -1;
+            selectedMinute = -1;
+        }
+    }
+
     private boolean isLeapYear(int year) {
         // A leap year is defined as a year that is either divisible by 4 and not by 100 or divisible by 400
         if(year % 400 == 0) {
@@ -55,6 +73,37 @@ public class AddTodoActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    private boolean isValidTime(int hour, int minute) {
+        if(hour < 0 || hour > 23) {
+            return false;
+        }
+
+        if(minute < 1 || minute > 59) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private String getFormatedTime(int hour, int minute) {
+        String formatedTime = "";
+
+        //If either the hour or minute is single digit add a 0 to the left of it
+
+        if(hour < 10) {
+            formatedTime += "0";
+        }
+        formatedTime += hour;
+        formatedTime += ":";
+
+        if(minute < 10) {
+            formatedTime += "0";
+        }
+        formatedTime += minute;
+
+        return formatedTime;
     }
 
     private boolean isValidFutureDate(int day, int month, int year) {
@@ -182,7 +231,15 @@ public class AddTodoActivity extends AppCompatActivity {
     }
 
     public void onTimeButtonClick(View timeButton) {
+        TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+                setTime(hour, minute);
+            }
+        };
 
+        timePickerDialog = new TimePickerDialog(this, timeSetListener, 0,0,true);
+        timePickerDialog.show();
     }
 
     public void onCreateButtonClick(View createButton) {

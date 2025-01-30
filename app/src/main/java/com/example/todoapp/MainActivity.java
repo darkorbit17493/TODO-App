@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //TODO: Remove before/during the branch merge
         Intent intent = new Intent(MainActivity.this, AddTodoActivity.class);
         startActivity(intent);
     }
