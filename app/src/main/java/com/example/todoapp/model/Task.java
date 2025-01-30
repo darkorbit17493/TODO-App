@@ -13,18 +13,18 @@ public class Task {
     public Task() {
     }
 
-    public Task(String name, String description, LocalDate date, LocalTime time, boolean isCompleted) {
+    public Task(String name, String description, LocalDate date, LocalTime time) {
         this.name = name;
         this.description = description;
         this.date = date;
         this.time = time;
-        this.isCompleted = isCompleted;
+        this.isCompleted = false;
     }
 
-    public Task(String name, String description, boolean isCompleted) {
+    public Task(String name, String description) {
         this.name = name;
         this.description = description;
-        this.isCompleted = isCompleted;
+        this.isCompleted = false;
     }
 
     public String getName() {
@@ -57,5 +57,13 @@ public class Task {
 
     public void setTime(LocalTime time) {
         this.time = time;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
     }
 }
