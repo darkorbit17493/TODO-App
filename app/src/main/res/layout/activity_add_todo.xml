@@ -43,7 +43,7 @@
                 android:text="Name:" />
 
             <EditText
-                android:id="@+id/AddTODONameEditTextText"
+                android:id="@+id/AddTODONameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -65,7 +65,7 @@
                 android:text="TextView:" />
 
             <EditText
-                android:id="@+id/AddTODODescriptionEditTextView"
+                android:id="@+id/AddTODODescriptionEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onDateButtonClick"
-                android:text="00/00/00" />
+                android:text="Untimed" />
 
         </LinearLayout>
 
@@ -106,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Time:" />
 
             <Button
                 android:id="@+id/AddTODOTimeButton"
