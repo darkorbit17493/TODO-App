@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TODO App</string>
     <string name="plus_button">+</string>
+    <string name="untimed_indicator">Untimed</string>
 </resources>

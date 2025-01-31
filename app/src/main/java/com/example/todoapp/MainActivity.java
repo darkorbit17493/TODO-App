@@ -16,8 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todoapp.adapter.TaskAdapter;
 import com.example.todoapp.model.Task;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openAddTask(View v){
-        Intent intent = new Intent(this, AddTodoActivity.class);
+        Intent intent = new Intent(this, AddTaskActivity.class);
         startActivity(intent);
     }
 }
