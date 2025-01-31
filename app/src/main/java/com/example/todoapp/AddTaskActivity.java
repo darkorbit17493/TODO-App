@@ -49,6 +49,7 @@ public class AddTaskActivity extends AppCompatActivity {
         } else {
             clearDate();
         }
+        updateTime();
     }
 
     private void clearDate() {
@@ -66,6 +67,12 @@ public class AddTaskActivity extends AppCompatActivity {
         } else {
             clearTime();
         }
+    }
+
+    // Sets the hour and minute to the selected ones so that setTime() reevaluates
+    // whether the selected time is valid based on the current date
+    private void updateTime() {
+        setTime(selectedHour, selectedMinute);
     }
 
     private void clearTime() {
