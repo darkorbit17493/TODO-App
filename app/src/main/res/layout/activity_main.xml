@@ -43,6 +43,7 @@
             android:layout_height="64dp"
             android:layout_margin="8dp"
             android:backgroundTint="#DEFFCB"
+            android:onClick="openAddTask"
             android:text="@string/plus_button"
             android:textColor="#101010"
             android:textSize="26sp"
