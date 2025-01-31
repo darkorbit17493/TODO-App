@@ -1,6 +1,7 @@
 package com.example.todoapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -46,5 +47,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        /*//TODO: Remove before/during the branch merge
+        Intent intent = new Intent(MainActivity.this, AddTodoActivity.class);
+        startActivity(intent);*/
     }
 }

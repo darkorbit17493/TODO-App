@@ -4,10 +4,17 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
+<<<<<<< HEAD
         <DropdownSelection timestamp="2025-01-30T15:40:57.070563500Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\hrist\.android\avd\Pixel_9_Pro_XL_API_35.avd" />
+=======
+        <DropdownSelection timestamp="2025-01-30T14:27:19.068835800Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\x\.android\avd\Pixel_9_Pro_API_30.avd" />
+>>>>>>> origin/addTODOActivityUI
             </handle>
           </Target>
         </DropdownSelection>
