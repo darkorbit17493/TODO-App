@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         tasks = new ArrayList<>();
         tasks.add(new Task("Task 1", "Do the dishes"));
-        tasks.add(new Task("Task 2", "Clean bedroom"));
+        tasks.add(new Task("Task 2", "Clean bedroomasdasdadsasdasdasdasdasdasdsda"));
+        tasks.add(new Task("Task 3", "Clean bedroom", LocalDate.now(), LocalTime.of(20,11)));
 
         adapter = new TaskAdapter(tasks);
 
